@@ -9,8 +9,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "org.spring")
+@ComponentScan(basePackages = "org.spring.controller")
 public class WebConfig implements WebMvcConfigurer {
+
 
     @Bean
     public MappingJackson2HttpMessageConverter jacksonMessageConverter(){
