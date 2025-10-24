@@ -23,7 +23,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", new DispatcherServlet(webContext));
         dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("/");
+        dispatcher.addMapping("/api/*");
 
         servletContext.setRequestCharacterEncoding("UTF-8");
     }

@@ -1,6 +1,9 @@
 package org.spring.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -11,9 +14,11 @@ public class User {
     private Long id;
 
     @Column(nullable = false, unique = true)
+    @NotBlank(message="le nom ne doit pas etre vide")
     private String username;
 
     @Column(nullable = false)
+    @Size(min=8,message="le password doit contenir entre 8 et 15 caractère")
     private String password;
 
     @Override
@@ -27,6 +32,7 @@ public class User {
     }
 
     @Column(nullable = false, unique = true)
+    @Email(message="l'email n'est pas valide")
     private String email;
 
     // Constructeur vide requis par JPA

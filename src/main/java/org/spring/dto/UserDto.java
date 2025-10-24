@@ -1,23 +1,25 @@
 package org.spring.dto;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 public class UserDto {
     private Long id;
-    @NotBlank(message="le nom ne doit pas etre vide")
 
+    @NotBlank(message="le nom ne doit pas etre vide")
     private String username;
     @Email(message="l'email n'est pas valide")
     private String email;
+    @Size(min=8,message="le password doit contenir entre 8 et 15 caractère")
     private String password;
 
     public String getPassword() {
         return password;
     }
 
-    @Size(max=15,min=8,message="le password doit contenir entre 8 et 15 caractère")
+
     public void setPassword(String password) {
         this.password = password;
     }

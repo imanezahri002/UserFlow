@@ -1,6 +1,7 @@
 package org.spring.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -18,6 +19,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "org.spring.repository")
+@ComponentScan(basePackages = "org.spring")
 public class PersistenceConfig {
 
     @Bean
